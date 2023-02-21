@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
   </head>
   <body>
-    <h1>Hello world!</h1>
+    <h1 class="visually-hidden">Site for creating todo.</h1>
+    <header class="header">
+      <p class="header__title">Todo</p>
+      <button class="header__theme-button">
+        <span class="visually-hidden">Click, if you want change theme.</span>
+      </button>
+    </header>
+    <main>
+      <section class="new-todo">
+        <h2 class="visually-hidden">Form for creating new todo.</h2>
+        <form class="new-todo__form" action="#" method="post">
+          <div>
+            <label class="checkbox__label" for="new-todo__completed">
+              <span class="visually-hidden">Completed</span>
+            </label>
+            <input
+              class="visually-hidden checkbox__checkbox"
+              id="new-todo__completed"
+              type="checkbox"
+              name="completed"
+            />
+          </div>
+          <label class="visually-hidden" for="new-form__title"
+            >Title of new todo.</label
+          >
+          <input
+            class="new-todo__title-input"
+            id="new-form__title"
+            type="text"
+            name="title"
+            placeholder="Create a new todo..."
+          />
+          <button class="new-todo__add-button" type="submit">
+            <span class="visually-hidden">Add new todo at todo list.</span>
+          </button>
+        </form>
+      </section>
+      <section class="todos">
+        <h2 class="visually-hidden">Todos list.</h2>
+        <ul class="todos__list"></ul>
+        <footer class="todos__footer">
+          <p class="todos__info">
+            <span class="todos__info-count">x</span> items left
+          </p>
+          <div>
+            <button class="todos__button" type="button">All</button>
+            <button class="todos__button" type="button">Active</button>
+            <button class="todos__button" type="button">Completed</button>
+          </div>
+          <button class="todos__clear-list-button" type="button">
+            Clear Completed
+          </button>
+        </footer>
+      </section>
+      <p class="extra-info">Drag and drop to rearder list</p>
+    </main>
+
+    <template id="todos-item">
+      <li class="todos__item">
+        <div>
+          <label class="checked__label" for="todos__completed"
+            ><span class="visually-hidden">Completed</span></label
+          >
+          <input
+            class="visually-hidden checked__checkbox"
+            type="checkbox"
+            name="todo-title"
+          />
+        </div>
+
+        <p class="todos__item-title"></p>
+        <button class="todos__delete-item-button" type="button">
+          <span class="visually-hidden"
+            >Click, if you want delete this todo</span
+          >
+        </button>
+      </li>
+    </template>
   </body>
 </html>
